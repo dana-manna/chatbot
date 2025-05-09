@@ -1,0 +1,232 @@
+/* تنسيق عام للصفحة */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100%;
+    margin: 0;
+    font-family: cursive;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* تصميم صندوق المحادثة */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 100vh;
+    border-radius: 8px;
+    overflow: hidden;
+
+    max-width: 600px;    /* تحديد الحد الأقصى للعرض */
+    margin: 0 auto;      /* محاذاة الصندوق في المنتصف */
+    padding: 20px;
+}
+
+/* عنوان المحادثة */
+.chat-header {
+    /*background-color: #155a00;*/
+    background: linear-gradient(135deg, #FFD700, #155a00);
+
+    color: white;
+    padding: 1rem;
+    border-radius: 40px;
+    text-align: center;
+}
+
+/* إدخال المستخدم */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+/* تحسين شكل حقل الإدخال */
+.chat-input input {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: #f4f4f4;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* عند الضغط على الإدخال */
+.chat-input input:focus {
+    background: white;
+    box-shadow: 0px 0px 8px rgba(0, 120, 255, 0.3);
+}
+
+/* زر الإرسال */
+#send-btn {
+    background: linear-gradient(135deg, #006633, #FFD700);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 8px;
+    transition: all 0.3s;
+}
+
+/* تأثير عند تمرير الماوس */
+#send-btn:hover {
+    background: #155a00;
+    transform: scale(1.1);
+}
+
+/* رسائل المستخدم */
+.user-message {
+    background-color: #FFD700;
+    align-self: flex-end;
+    text-align: right;
+    padding: 18px 16px;
+    border-radius: 18px 18px 4px 18px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-left: auto;
+}
+
+/* رسائل البوت */
+.bot-message {
+    background-color: #e0e0e0;
+    align-self: flex-start;
+    text-align: left;
+    padding: 20px;
+    border-radius: 18px 18px 18px 4px;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-right: auto;
+}
+
+/* صندوق الرسائل */
+.chat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #f9fbfcfb;
+    padding: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    overflow-y: auto;
+}
+
+/* الوضع الداكن */
+.dark-mode {
+    background: #1e1e1e;
+    color: white;
+}
+
+/* تعديل ألوان العناصر عند التبديل للوضع الداكن */
+.dark-mode .chat-container {
+    background: #2a2a2a;
+}
+
+.dark-mode .chat-box {
+    background: #1e1e1e;
+}
+
+.dark-mode .user-message {
+    background: #1b1b1b;
+}
+
+.dark-mode .bot-message {
+    background: #444;
+}
+
+.dark-mode .chat-input {
+    background: #2a2a2a;
+}
+
+.dark-mode .chat-input input {
+    background: #3a3a3a;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode .chat-header {
+    background: #333;
+}
+
+.dark-mode #send-btn {
+    background: linear-gradient(135deg, #155a00, #FFD700);
+}
+
+/* زر الإيموجي */
+#emoji-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* حاوية الإيموجيات */
+.emoji-container {
+    position: absolute;
+    bottom: 50px;
+    left: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    padding: 10px;
+    z-index: 100;
+}
+
+/* قائمة الإيموجيات */
+.emoji-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    max-width: 200px;
+}
+
+.emoji-list span {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.2s;
+}
+
+.emoji-list span:hover {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* زر حذف المحادثة */
+#clear-chat {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#clear-chat:hover {
+    background: #cc0000;
+}
+
+.robot-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot الجامعة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-bubble bot">
+                <img src="yarmoukk_image.jpg" alt="Robot" class="robot-image" />
+            </div>
+
+            <div class="bot-info">
+               <!--- <div class="bot-avatar">🤖</div>-->
+                <h1>Yarmouk University Chatbot</h1>
+            </div>
+
+            <div class="chat-actions">
+                <button id="clear-chat">🗑️</button>
+                <button id="toggle-dark-mode">🌙</button>
+            </div>
+        </div>
+
+        <div class="chat-box" id="chat-box">
+            
+            <!-- ستظهر الرسائل هنا -->
+        </div>
+
+        
+
+        <div class="chat-input">
+            <div class="emoji-container" id="emoji-container">
+                <div class="emoji-list" id="emoji-list">
+                    <!-- سيتم توليد الرموز التعبيرية هنا بواسطة JavaScript -->
+                </div>
+            </div>
+            <button id="emoji-btn">😊</button>
+
+            <input type="text" id="user-input" placeholder="اكتب هنا..." />
+            <button id="send-btn"><span>إرسال</span> ✈️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
